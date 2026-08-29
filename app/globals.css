@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+* {
+  border-color: theme("colors.line");
+}
+
+body {
+  background-color: theme("colors.paper");
+  color: theme("colors.ink.DEFAULT");
+  font-feature-settings: "cv11", "ss01";
+}
+
+/* tabular numerals everywhere data appears */
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+::selection {
+  background: theme("colors.brand.100");
+  color: theme("colors.brand.900");
+}
+
+/* visible keyboard focus */
+:focus-visible {
+  outline: 2px solid theme("colors.brand.500");
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: theme("colors.line");
+  border-radius: 999px;
+}
